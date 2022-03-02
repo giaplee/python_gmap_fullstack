@@ -35,12 +35,13 @@ the_endpoint = "http://[domain/localhost]:[port]/api/v1/place/detail/phone/{inpu
 8. Use NGINX for backend proxy configuration if you want to use the api on your server instance
 
 **`Prerequiresit`**
-- Install Docker first (The guidelines here: https://docs.docker.com/engine/install/)
+- Install Docker first (The guideline here: https://docs.docker.com/engine/install/)
 - Recommend you use Ubuntu or MacOS
-
+- Please notice on .env file in each folder of project (backend, backend_fastapi and frontend): open .env file in backend and backend_fastapi folder and then update your map api key and your port you want or use the default port.
+- When you run run.sh script it will build a docker image then start it with `docker run` command. Please look at Dockerfile if you want to edit something like expose port (you also have to edit port in .env file)
 
 **`Quick run the demo with shell script`**
-1. Downnload whole project folders from branch: [quickrundemo] because it has .env file which help you config running port and google map API key) **For data security reason so I can't share my .env file content to everyone!**
+1. Download whole project folders from branch: [quickrundemo] because it has .env file which help you config running port and google map API key) **For data security reason so I can't share my .env file content to everyone!**
 2. Suppose you are using Ubuntu or MacOS: In the terminal type: `cd quickrundemo/backend` if you want to run the backend that was built with Flask else `cd quickrundemo/backend_fastapi` if you want to run the backend that was built with FastAPI
 then you run the run.sh file with `bash run.sh` and wait the script will builds the docker image and runs it for you
 3. Open new terminal window then goto the frontend with `cd quickrundemo/frontend` then run run.sh file and wait the script build and run the frontend web with docker image
