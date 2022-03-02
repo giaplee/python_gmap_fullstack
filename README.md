@@ -1,6 +1,11 @@
 # python googlemap >> fullstack with reactjs
 Demo how to implement google map place API with python (Flask, FastAPI) and reactjs
 
+**`Activity Flow Diagram(Sequence)`**
+<p align="left">
+    <img src="https://github.com/giaplee/python_gmap_fullstack/blob/master/documents/pymap_api_sequence_diagram.png" width="600" />
+</p>
+
 **`Purpose:`**
 - This demo project help you can understand how to implement google map api in a backend REST API to reuse it in other way by you
 - At here, we know how to build a REST API with Flask or FastAPI with Python language
@@ -40,10 +45,16 @@ the_endpoint = "http://[domain/localhost]:[port]/api/v1/place/detail/phone/{inpu
 2. Backend API framework: Flask & FastAPI
 3. Containerize with Docker
 4. Frontend for API testing: Reactjs with Node
-5. Development environment: MacOs
-6. Testing environments: MacOS, Linux (Ubuntu 18.04, CentOS 7)
-7. Support deploy environments: Linux (Ubuntu 18 - 20, CentOS, Debian), Windows Server with Docker Engine for the Desktop
-8. Use NGINX for backend proxy configuration if you want to use the api on your server instance
+5. Further, we can you Redis caching solution to cache the phone number with key is place _id to reduce request time to Map API
+6. Development environment: MacOs
+7. Testing environments: MacOS, Linux (Ubuntu 18.04, CentOS 7)
+8. Support deploy environments: Linux (Ubuntu 18 - 20, CentOS, Debian), Windows Server with Docker Engine for the Desktop
+9. Use NGINX for backend proxy configuration if you want to use the api on your server instance
+
+**`Deploy with CI/CI and Docker`**
+<p align="center">
+    <img src="https://github.com/giaplee/python_gmap_fullstack/blob/master/documents/components_deploy_architecture.png" with="500" />
+</p>    
 
 **`Prerequiresit`**
 - Install Docker first (The guideline here: https://docs.docker.com/engine/install/)
@@ -56,4 +67,11 @@ the_endpoint = "http://[domain/localhost]:[port]/api/v1/place/detail/phone/{inpu
 2. Suppose you are using Ubuntu or MacOS: In the terminal type: `cd quickrundemo/backend` if you want to run the backend that was built with Flask else `cd quickrundemo/backend_fastapi` if you want to run the backend that was built with FastAPI
 then you run the run.sh file with `bash run.sh` and wait the script will builds the docker image and runs it for you
 3. Open new terminal window then goto the frontend with `cd quickrundemo/frontend` then run run.sh file and wait the script build and run the frontend web with docker image
+4. After that, you open web browser then go to `http://localhost:3006`
+5. Input any place name or address on the world you know for testing
+
+`Test on the web UI`
+<p align="left">
+    <img src="https://github.com/giaplee/python_gmap_fullstack/blob/master/documents/web_ui_result.png" with="600" />
+</p>    
 
