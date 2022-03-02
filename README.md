@@ -1,3 +1,11 @@
+
+[![Build Status](https://travis-ci.org/AOEpeople/Tagging.svg?branch=master)](https://#)
+[![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Python version](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue)](https://#)
+[![Docker build](https://img.shields.io/badge/docker%20build-automated-066da5)](https://#)
+![Python Flask](https://img.shields.io/static/v1?label=Flask&message=Implemented&color=blue)
+![Python Flask](https://img.shields.io/static/v1?label=FastAPI&message=Implemented&color=green)
+![Python Flask](https://img.shields.io/static/v1?label=Reactjs&message=WebApp&color=informational)
 # python googlemap >> fullstack with reactjs
 Demo how to implement google map place API with python (Flask, FastAPI) and reactjs
 
