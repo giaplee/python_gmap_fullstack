@@ -62,7 +62,11 @@ the_endpoint = "http://[domain/localhost]:[port]/api/v1/place/detail/phone/{inpu
 **`Deploy with CI/CI and Docker`**
 <p align="center">
     <img src="https://github.com/giaplee/python_gmap_fullstack/blob/master/documents/components_deploy_architecture.png" with="500" />
-</p>    
+</p>
+- Monitor and Alert with Grafana(https://grafana.com/docs/grafana/latest/introduction/)
+<p align="left">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTFWLVg8aAnS8mF_b8lwzW62LddEJAAxHCJaqETsFxWLpUlqz7n_Pn5JIDGSUmyCZigyg&usqp=CAU" width="300" />
+</p>
 
 **`Prerequiresit`**
 - Install Docker first (The guideline here: https://docs.docker.com/engine/install/)
