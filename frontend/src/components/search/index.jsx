@@ -31,7 +31,7 @@ export function Search() {
 
     //This function used for performce a request to backend server where will check then return a item in json format
     const search = () => {
-        //console.log(searchText);
+        setIsError(false);
         setIsLoading(true); //show the loading spin
         axios.get(`http://localhost:5005/api/v1/place/detail/phone/${searchText}`)
         .then(res => {
@@ -46,6 +46,10 @@ export function Search() {
                 setMessage(data.message);
             }
             setIsLoading(false); //hide the loading spin
+        }).catch(err => {
+            setIsLoading(false); //hide the loading spin
+            setMessage(err.message);
+            setIsError(true);
         })
     };
 
@@ -83,7 +87,7 @@ export function Search() {
                                 message=""
                                 description={message}
                                 type="warning"
-                                style={{ width: 'calc(60%)'}, {height: '50px'}}
+                                style={{ width: 'calc(60%)'},{height: '50px'}}
                                 />   
                             :
                             <span></span>
