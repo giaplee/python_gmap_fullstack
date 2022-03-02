@@ -24,6 +24,17 @@ the_endpoint = "http://[domain/localhost]:[port]/api/v1/place/detail/phone/{inpu
 #Replace [port] with your port in .env file (with key is PORT) 
 ```
 
+**`Project structure`**
+```xml
+-root folder
+----backend #this folder contains api source that was implemented with Flask
+----backend_fastapi #this folder contains api source that was implemented with FastAPI (FlaskAPI link) 
+----frontend #this fodler contains source web app that was implemented with Reacjs which helps us easily to test the api
+
+#In fact, we just use an Api from backend folder or backend_fastapi because they have same function and logic except one uses Flask and one uses FastAPI
+#I have implemeted both framework (Flask and FastAPI) with only purpose is want to know: (which one will run faster or implement easier)
+```
+
 **`Technical stack:`**
 1. Programming language: Python
 2. Backend API framework: Flask & FastAPI
