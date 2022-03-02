@@ -50,3 +50,12 @@
   min-height: 400px
 }
 
+.alert-panel {
+  margin-top: 5px;
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  width: 60%;
+  height: auto;
+}
+

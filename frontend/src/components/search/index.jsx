@@ -31,9 +31,14 @@ export function Search() {
 
     //This function used for performce a request to backend server where will check then return a item in json format
     const search = () => {
-        setIsError(false);
+        if (isInputEmpty) {
+            setMessage('Please input the address or place name!');
+            setIsError(true); 
+            return;
+        }
+        setIsError(false); //hide recent warning info
         setIsLoading(true); //show the loading spin
-        axios.get(`http://localhost:5005/api/v1/place/detail/phone/${searchText}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_API_ENDPOINT}/place/detail/phone/${searchText}`)
         .then(res => {
             let data = res.data;
             if (data.success) {
@@ -63,13 +68,13 @@ export function Search() {
         }else{
             setSearchText(search_text);
             setIsInputEmpty(false) //set TRUE that means user has inputted search text
+            if (isError) {setIsError(false);}
         }
     }
     
     useEffect(() => {
-        document.title = "FunnelBeam Test project - Seach with Google Map API";
-        console.log('Search string = ' + searchText); //show search string in the log windows >> just used for testing
-    });
+        document.title = "Test project - Search with Google Map API";
+    },[]);
 
     return (
         <div className="search-detail">
@@ -83,12 +88,14 @@ export function Search() {
                     <Button type="primary" onClick={() => search()}>Search</Button>
                     {
                             (isInputEmpty || isError) ?
-                                <Alert
-                                message=""
-                                description={message}
-                                type="warning"
-                                style={{ width: 'calc(60%)'},{height: '50px'}}
-                                />   
+                               <div className="alert-panel">
+                                    <Alert
+                                    message=""
+                                    description={message}
+                                    type="warning"
+                                    style={{ width: 'auto'},{height: '50px'}}
+                                    />   
+                                </div> 
                             :
                             <span></span>
                         }
