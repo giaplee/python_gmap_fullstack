@@ -59,6 +59,15 @@ the_endpoint = "http://[domain/localhost]:[port]/api/v1/place/detail/phone/{inpu
 8. Support deploy environments: Linux (Ubuntu 18 - 20, CentOS, Debian), Windows Server with Docker Engine for the Desktop
 9. Use NGINX for backend proxy configuration if you want to use the api on your server instance
 
+
+**`Document with Swagger`**
+- The FastAPI framework will automatic generate REST API document web for rus (Great!)
+- After running the backend_fastAPI, we can go to the API document by `http://localhost:[port]/docs` (default port is 5005)
+<p align="left">
+    <img src="https://github.com/giaplee/python_gmap_fullstack/blob/master/documents/fasapi__web_docs.png" with="500" />
+</p>    
+
+
 **`Deploy with CI/CI and Docker`**
 <p align="center">
     <img src="https://github.com/giaplee/python_gmap_fullstack/blob/master/documents/components_deploy_architecture.png" with="500" />
