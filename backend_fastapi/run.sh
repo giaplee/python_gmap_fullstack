@@ -6,7 +6,7 @@ docker build -t fbmapapi:v1 .
 echo "-----------docker build completed >>"
 echo "-----------docker run ..."
 #you have to change 5005:5005 to the same port at .env and Dockerfile
-docker run --rm -p 5005:5005 fbmapapi:v1 #you can use -d parameter to run the docker in the background mode (in production mode on remote server)
+docker run --rm -p 5005:5005 --name pymapapi_dev fbmapapi:v1 #you can use -d parameter to run the docker in the background mode (in production mode on remote server)
 echo "-----------docker run completed"
 
 
