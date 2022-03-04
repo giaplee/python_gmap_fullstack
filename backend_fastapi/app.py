@@ -46,6 +46,10 @@ def internal_error(e):
 @app.get('/api/v1/place/detail/phone/{input_address}')
 async def get_place_phone(input_address: str):
     """GET place phone number (might includes some another information)"""
+
+    if check_map_api_key() == False:
+        return response_render({'error': 404, 'message': 'Map Key Not found!', "success": False})
+
     place_id    = find_place_internal(input_address) #get place id
     data        = get_place_detail_phone(place_id) #get place detail from place id then get phone number
     if data is None:
@@ -58,6 +62,10 @@ async def get_place_phone(input_address: str):
 @app.get('/api/v1/place/detail/{place_id}')
 def get_place_detail(place_id: str):
     """GET place phone number from place id"""
+
+    if check_map_api_key() == False:
+        return response_render({'error': 404, 'message': 'Map Key Not found!', "success": False})
+
     result = get_place_detail_phone(place_id)
 
     #print(result) #use for debuging
@@ -68,6 +76,10 @@ def get_place_detail(place_id: str):
 @app.get("/api/v1/place/search/{input_address}")
 def find_place(input_address: str):
     """GET place information from an address"""
+
+    if check_map_api_key() == False:
+        return response_render({'error': 404, 'message': 'Map Key Not found!', "success": False})
+
     result = find_place_internal(input_address)
 
     return JSONResponse(result);
@@ -120,6 +132,12 @@ This function accept ouput string in json format then return to client with json
 def response_render(result):
    
     return JSONResponse(result)
+
+def check_map_api_key():
+    """Check google map API key setting in .env file"""
+    if MAP_API_KEY == "fill_your_api_key_here" or MAP_API_KEY == None:
+        return False
+    return True      
 
 #Server running functions =================================================================>
 if __name__ == "__main__":
