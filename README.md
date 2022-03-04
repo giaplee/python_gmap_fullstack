@@ -17,7 +17,7 @@ Demo how to implement google map place API with python (Flask, FastAPI) and reac
 **`Purpose:`**
 - This demo project help you can understand how to implement google map api in a backend REST API to reuse it in other way by you
 - At here, we know how to build a REST API with Flask or FastAPI with Python language
-- Logic is very simple: we build and expose a api endpoint which will helps the user can search and get a specific phone number (might includes place name, address) from an inputted address or place name on the website with an input box.
+- Logic is very simple: we build and expose an api endpoint which will helps the user can search and get a specific phone number (might includes place name, address) from an inputted address or place name on the website with an input box.
 - This is a sample for the result from our API:
 -- Eg. The user search the phone with this address: Computer History Museum Mountain View USA
 ```json
@@ -41,7 +41,7 @@ the_endpoint = "http://[domain/localhost]:[port]/api/v1/place/detail/phone/{inpu
 ```xml
 -root folder
 ----backend #this folder contains api source that was implemented with Flask
-----backend_fastapi #this folder contains api source that was implemented with FastAPI (FlaskAPI link) 
+----backend_fastapi #this folder contains api source that was implemented with FastAPI 
 ----frontend #this fodler contains source web app that was implemented with Reacjs which helps us easily to test the api
 
 #In fact, we just use an Api from backend folder or backend_fastapi because they have same function and logic except one uses Flask and one uses FastAPI
@@ -50,7 +50,7 @@ the_endpoint = "http://[domain/localhost]:[port]/api/v1/place/detail/phone/{inpu
 
 **`Technical stack:`**
 1. Programming language: Python
-2. Backend API framework: Flask & FastAPI
+2. Backend API framework: Flask & FastAPI ([link](https://fastapi.tiangolo.com/))
 3. Containerize with Docker
 4. Frontend for API testing: Reactjs with Node
 5. Further, we can you Redis caching solution to cache the phone number with key is place _id to reduce request time to Map API
@@ -61,14 +61,14 @@ the_endpoint = "http://[domain/localhost]:[port]/api/v1/place/detail/phone/{inpu
 
 
 **`Document with Swagger`**
-- The FastAPI framework will automatic generate REST API document web for rus (Great!)
+- The FastAPI framework will automatic generate REST API document web for us (Great!)
 - After running the backend_fastAPI, we can go to the API document by `http://localhost:[port]/docs` (default port is 5005)
 <p align="left">
     <img src="https://github.com/giaplee/python_gmap_fullstack/blob/master/documents/fasapi__web_docs.png" with="500" />
 </p>    
 
 
-**`Deploy with CI/CI and Docker`**
+**`Deploy with CI/CD and Docker`**
 <p align="center">
     <img src="https://github.com/giaplee/python_gmap_fullstack/blob/master/documents/components_deploy_architecture.png" with="500" />
 </p>
