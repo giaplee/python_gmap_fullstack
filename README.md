@@ -89,7 +89,7 @@ the_endpoint = "http://[domain/localhost]:[port]/api/v1/place/detail/phone/{inpu
 then you run the run.sh file with `bash run.sh` and wait the script will builds the docker image and runs it for you
 3. Open new terminal window then goto the frontend with `cd quickrundemo/frontend` then run run.sh file and wait the script build and run the frontend web with docker image
 4. After that, you open web browser then go to `http://localhost:3006`
-5. Input any place name or address on the world you know for testing
+5. Input any place name or address in the world you know for testing
 
 `Test on the web UI`
 <p align="left">
